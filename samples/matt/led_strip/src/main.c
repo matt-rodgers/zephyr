@@ -29,6 +29,7 @@ int main(void)
 		}
 
 		led_state = !led_state;
+		printk("blink\n");
 		k_msleep(SLEEP_TIME_MS);
 	}
 	return 0;

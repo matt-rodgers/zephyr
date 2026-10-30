@@ -1,1 +1,1 @@
-probe-rs download --chip STM32F303K8 --binary-format hex build/zephyr/zephyr.hex
+probe-rs download --chip esp32c6 --binary-format bin build/zephyr/zephyr.bin
