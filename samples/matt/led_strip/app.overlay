@@ -13,7 +13,7 @@
 		frame-format = <32768>; /* SPI_FRAME_FORMAT_TI */
 
 		/* WS2811 */
-		chain-length = <40>; /* arbitrary; change at will */
+		chain-length = <60>; /* arbitrary; change at will */
 		spi-one-frame = <ONE_FRAME>;
 		spi-zero-frame = <ZERO_FRAME>;
 		color-mapping = <LED_COLOR_ID_BLUE
