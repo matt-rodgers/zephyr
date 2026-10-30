@@ -1,0 +1,32 @@
+#include <zephyr/dt-bindings/led/led.h>
+
+#include "dt_bindings.h"
+
+&spi1 {
+
+	led_strip: ws2811@0 {
+		compatible = "worldsemi,ws2812-spi";
+
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <SPI_FREQ_HZ>;
+		frame-format = <32768>; /* SPI_FRAME_FORMAT_TI */
+
+		/* WS2811 */
+		chain-length = <40>; /* arbitrary; change at will */
+		spi-one-frame = <ONE_FRAME>;
+		spi-zero-frame = <ZERO_FRAME>;
+		color-mapping = <LED_COLOR_ID_BLUE
+				 LED_COLOR_ID_RED
+				 LED_COLOR_ID_GREEN>;
+
+		reset-delay = <250>;
+		status = "okay";
+	};
+};
+
+/ {
+	aliases {
+		led-strip = &led_strip;
+	};
+};
